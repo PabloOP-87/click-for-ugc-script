@@ -18,6 +18,10 @@ game:GetService("Players").LocalPlayer:WaitForChild("RemoteEvent"):FireServer()
 end
 end)
 
+KillingCheats:CreateButton("Equip Best Pet", function()
+game:GetService("ReplicatedStorage"):WaitForChild("EggRemoteEvents"):WaitForChild("EquipBest"):FireServer()
+end)
+
 KillingCheats:CreateButton("Anti AFK", function()
 while not game:IsLoaded() do wait() end
 repeat wait() until game.Players.LocalPlayer.Character
@@ -37,7 +41,7 @@ else
 end
 game.StarterGui:SetCore('SendNotification', { Title = 'Max is insane'; Text = 'Anti-AFK activated!'; })
 end)
- 
+
 local KillingCheats = PhantomForcesWindow:NewSection("Credits")
 
 KillingCheats:CreateButton("Say thanks to God, not to me", function()
