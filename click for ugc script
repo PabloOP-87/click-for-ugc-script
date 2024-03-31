@@ -1,0 +1,45 @@
+ --click for ugc script without key lol
+
+local Library = loadstring(Game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
+ 
+local PhantomForcesWindow = Library:NewWindow("Click for UGC")
+ 
+local KillingCheats = PhantomForcesWindow:NewSection("Main")
+ 
+KillingCheats:CreateToggle("Auto Click", function(value)
+while wait() do
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Click"):FireServer()
+end        
+end)
+
+KillingCheats:CreateToggle("Auto Spin Wheel", function(value)
+while wait(5) do
+game:GetService("Players").LocalPlayer:WaitForChild("RemoteEvent"):FireServer()
+end
+end)
+
+KillingCheats:CreateButton("Anti AFK", function()
+while not game:IsLoaded() do wait() end
+repeat wait() until game.Players.LocalPlayer.Character
+Players = game:GetService("Players")
+local GC = getconnections or get_signal_cons
+if GC then
+	for i,v in pairs(GC(Players.LocalPlayer.Idled)) do
+		if v["Disable"] then v["Disable"](v)
+		elseif v["Disconnect"] then v["Disconnect"](v)
+		end
+	end
+else
+  Players.LocalPlayer.Idled:Connect(function()
+    VirtualUser:CaptureController()
+    VirtualUser:ClickButton2(Vector2.new())
+  end)
+end
+game.StarterGui:SetCore('SendNotification', { Title = 'Max is insane'; Text = 'Anti-AFK activated!'; })
+end)
+ 
+local KillingCheats = PhantomForcesWindow:NewSection("Credits")
+
+KillingCheats:CreateButton("Say thanks to God, not to me", function()
+print("love God because he love you")
+end)
