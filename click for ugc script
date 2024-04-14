@@ -1,4 +1,4 @@
- --click for ugc script without key lol
+--click for ugc script made by antony rachacuca
 
 local Library = loadstring(Game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
  
