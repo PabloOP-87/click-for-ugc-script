@@ -7,13 +7,13 @@ local PhantomForcesWindow = Library:NewWindow("Click for UGC")
 local KillingCheats = PhantomForcesWindow:NewSection("Main")
  
 KillingCheats:CreateToggle("Auto Click", function(value)
-while wait() do
+while wait(0.01) do
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Click"):FireServer()
 end        
 end)
 
-KillingCheats:CreateToggle("Auto Spin Wheel", function(value)
-while wait(5) do
+KillingCheats:CreateToggle("Auto Spin Wheel", function(value)--idk why this dont work, prob wheel broke
+while wait(1) do
 game:GetService("Players").LocalPlayer:WaitForChild("RemoteEvent"):FireServer()
 end
 end)
@@ -42,8 +42,18 @@ end
 game.StarterGui:SetCore('SendNotification', { Title = 'Max is insane'; Text = 'Anti-AFK activated!'; })
 end)
 
+local KillingCheats = PhantomForcesWindow:NewSection("Misc")
+
+KillingCheats:CreateButton("Dance GUI", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/eCpipCTH"))()
+end)
+
+KillingCheats:CreateButton("Rejoin", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/1gtVMUz3"))()
+end)
+
 local KillingCheats = PhantomForcesWindow:NewSection("Credits")
 
 KillingCheats:CreateButton("Say thanks to God, not to me", function()
-print("love God because he love you")
+print("God bless you")
 end)
