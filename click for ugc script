@@ -49,7 +49,7 @@ loadstring(game:HttpGet("https://pastebin.com/raw/eCpipCTH"))()
 end)
 
 KillingCheats:CreateButton("Rejoin", function()
-loadstring(game:HttpGet("https://pastebin.com/raw/1gtVMUz3"))()
+game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer)
 end)
 
 local KillingCheats = PhantomForcesWindow:NewSection("Credits")
