@@ -7,8 +7,8 @@ local PhantomForcesWindow = Library:NewWindow("Click for UGC")
 local KillingCheats = PhantomForcesWindow:NewSection("Main")
  
 KillingCheats:CreateToggle("Auto Click", function(value)
-while wait() do
-game:GetService("ReplicatedStorage").Events.Click:FireServer()
+while wait(0.01) do
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Click"):FireServer()
 end
 end)
 
