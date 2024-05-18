@@ -1,4 +1,4 @@
---click for ugc script made by antony rachacuca
+--click for ugc script made by eu adoro danone
 
 local Library = loadstring(Game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
  
@@ -7,19 +7,23 @@ local PhantomForcesWindow = Library:NewWindow("Click for UGC")
 local KillingCheats = PhantomForcesWindow:NewSection("Main")
  
 KillingCheats:CreateToggle("Auto Click", function(value)
-while wait(0.01) do
-game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Click"):FireServer()
-end        
+while wait() do
+game:GetService("ReplicatedStorage").Events.Click:FireServer()
+end
 end)
 
-KillingCheats:CreateToggle("Auto Spin Wheel", function(value)--idk why this dont work, prob wheel broke
+KillingCheats:CreateToggle("Auto Spin Wheel", function(value)
 while wait(1) do
-game:GetService("Players").LocalPlayer:WaitForChild("RemoteEvent"):FireServer()
+game:GetService("Players").LocalPlayer.PlayerGui.MainGui.SpinningWheelFrame.SpinClient.RemoteEvent:FireServer()
 end
 end)
 
 KillingCheats:CreateButton("Equip Best Pet", function()
-game:GetService("ReplicatedStorage"):WaitForChild("EggRemoteEvents"):WaitForChild("EquipBest"):FireServer()
+game:GetService("ReplicatedStorage").EggRemoteEvents.EquipBest:FireServer()
+end)
+
+KillingCheats:CreateButton("Improve FPS", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/X3ehxADT"))()
 end)
 
 KillingCheats:CreateButton("Anti AFK", function()
@@ -44,8 +48,8 @@ end)
 
 local KillingCheats = PhantomForcesWindow:NewSection("Misc")
 
-KillingCheats:CreateButton("Dance GUI", function()
-loadstring(game:HttpGet("https://pastebin.com/raw/eCpipCTH"))()
+KillingCheats:CreateButton("Emote GUI", function()
+loadstring(game:HttpGetAsync("https://gist.githubusercontent.com/RedZenXYZ/3da6af1961efa275de6c3c2a6dbace03/raw/bb027f99cec0ea48ef9c5eabfb9116ddff20633d/FE%2520Emotes%2520Gui"))()
 end)
 
 KillingCheats:CreateButton("Rejoin", function()
@@ -54,6 +58,6 @@ end)
 
 local KillingCheats = PhantomForcesWindow:NewSection("Credits")
 
-KillingCheats:CreateButton("Say thanks to God, not to me", function()
-print("God bless you")
+KillingCheats:CreateButton("made by DJSerial", function()
+print("dont skid my source")
 end)
