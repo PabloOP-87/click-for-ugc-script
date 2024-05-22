@@ -1,4 +1,17 @@
---click for ugc script made by eu adoro danone
+--click for ugc script made by EGGimus
+
+local Players = game:GetService("Players")
+
+local Player = Players.LocalPlayer
+local PlayerGui = Player:WaitForChild("PlayerGui")
+
+local function DestroyGui()
+    PlayerGui:FindFirstChild("FavoriteGameScript"):Destroy()
+end
+
+DestroyGui()
+
+game.StarterGui:SetCore('SendNotification', { Title = 'Favorite game screen hide'; Text = 'Enjoy!'; })
 
 local Library = loadstring(Game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
  
@@ -58,6 +71,7 @@ end)
 
 local KillingCheats = PhantomForcesWindow:NewSection("Credits")
 
-KillingCheats:CreateButton("made by DJSerial", function()
-print("dont skid my source")
+KillingCheats:CreateButton("made by egg?", function()
+print("keep yourself safe, dont execute unstrustable scripts")
 end)
+--simple source made for autofarm in click for ugc, everybody can do kkj
